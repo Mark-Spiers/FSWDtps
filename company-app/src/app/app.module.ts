@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NameDirective } from './name.directive';
 import { AddressDirective } from './address.directive';
 import { PiechartComponent } from './piechart/piechart.component';
+import { EmployeeDepartmentComponent } from './employee-department/employee-department.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PiechartComponent } from './piechart/piechart.component';
     AddEmployeeComponent,
     NameDirective,
     AddressDirective,
-    PiechartComponent
+    PiechartComponent,
+    EmployeeDepartmentComponent
   ],
   imports: [
     BrowserModule,

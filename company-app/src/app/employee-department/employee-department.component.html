@@ -1,0 +1,14 @@
+<form (ngSubmit)="addEmployeeDepartment(addForm)" #addForm="ngForm">
+
+    <fieldset>
+
+        <legend>Assign an employee to a department</legend>
+            <div><input type="number" name="EmployeeID" placeholder="Employee ID"></div>
+            <div><input type="number" name="DepartmentID" placeholder="Department ID"></div>
+            <input type="Submit">
+      
+    </fieldset>
+</form>
+
+<div *ngIf="addForm.hasError('required', 'EmployeeID')">Employee ID name is required</div>
+<div *ngIf="addForm.hasError('required', 'DepartmentID')">Department ID is required</div>
