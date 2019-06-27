@@ -24,7 +24,7 @@ app.get('/employees', function(req, res) {
     });
 });
 
-app.post('/addemployees', function(req, res) {
+app.post('/addemployee', function(req, res) {
     db.addEmployees(req.body, function(insertedKey) {
         updateEmployees(function(){
             console.log('/add employees successful', 200);
