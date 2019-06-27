@@ -12,6 +12,16 @@ db.connect(function(err) {
     console.log("Connected to MySQL");
 });
 
+exports.getEmployees = function(callback) {
+    db.query(
+        "SELECT * FROM Employee;",
+        function(err, rows) {
+            if (err) throw err;
+            callback(rows);
+        }
+    )
+}
+
 exports.getEmployeesPerDepartment = function(callback) {
     db.query(
         "SELECT * FROM getEmployeesPerDepartment;",

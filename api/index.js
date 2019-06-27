@@ -4,14 +4,13 @@ const db = require('./db.js');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
-var passport = require('passport');
 
 app.use(express.json());
 
 employees = [];
 
 function updateEmployees(employeesReadyFn) {
-    db.getEmployeesPerDepartment(function(rows) {
+    db.getEmployees(function(rows) {
         employees = rows;
         employeesReadyFn();
     })
