@@ -1,12 +1,24 @@
 <form (ngSubmit)="addEmployee(addForm)" #addForm="ngForm">
 <fieldset>
     <legend>Add employee</legend>
-    <div><input [(ngModel)]="newEmployee.EmployeeName" name ="EmployeeName" placeholder="Employee Name"></div>
-    <div><input [(ngModel)]="newEmployee.Address" name ="Address" placeholder="Address"></div>
-    <div><input [(ngModel)]="newEmployee.NIN" name ="NIN" placeholder="National Insurance No."></div>
-    <div><input [(ngModel)]="newEmployee.IBAN" name ="IBAN" placeholder="IBAN No."></div>
-    <div><input [(ngModel)]="newEmployee.BIC" name ="BIC" placeholder="BIC No."></div>
-    <div><input [(ngModel)]="newEmployee.Salary" type ="number" name="Salary" placeholder="Salary"></div>
-    <input type ="Submit">
+    <div><input [(ngModel)]="newEmployee.EmployeeName" name ="EmployeeName" placeholder="Employee Name" required ></div>
+    <div><input [(ngModel)]="newEmployee.Address" name ="Address" placeholder="Address" required ></div>
+    <div><input [(ngModel)]="newEmployee.NIN" name ="NIN" placeholder="National Insurance No." required 
+        pattern="[a-zA-Z]{2}[0-9]{6}[abcdfmpABCDFMP]" ></div>
+    <div><input [(ngModel)]="newEmployee.IBAN" name ="IBAN" placeholder="IBAN No." required 
+        pattern="[A-Za-z]{2}[0-9]{2}[A-Za-z]{4}[0-9]{14}"></div>
+    <div><input [(ngModel)]="newEmployee.BIC" name ="BIC" placeholder="BIC No." required 
+        pattern="^[A-Za-z]{6}[0-9][0-9A-Za-z]"></div>
+    <div><input [(ngModel)]="newEmployee.Salary" type ="number" name="Salary" placeholder="Salary" required ></div>
+    <input type="Submit">
 </fieldset>
 </form>
+<div *ngIf="addForm.hasError('required', 'EmployeeName')">Employee name is required</div>
+<div *ngIf="addForm.hasError('required', 'Address')">Address is required</div>
+<div *ngIf="addForm.hasError('required', 'NIN')">National Insurance No is required</div>
+<div *ngIf="addForm.hasError('pattern', 'NIN')">National Insurance No *</div>
+<div *ngIf="addForm.hasError('required', 'IBAN')">IBAN is required</div>
+<div *ngIf="addForm.hasError('pattern', 'IBAN')">IBAN is *</div>
+<div *ngIf="addForm.hasError('required', 'BIC')">BIC is required</div>
+<div *ngIf="addForm.hasError('pattern', 'BIC')">BIC is *</div>
+<div *ngIf="addForm.hasError('required', 'Salary')">Salary is required</div>
