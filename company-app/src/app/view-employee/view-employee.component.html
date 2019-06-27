@@ -8,3 +8,7 @@
         <td>{{employee.DepartmentName}}</td>
     </tr>
 </table>
+<ul id="tableData" hidden>
+    <li *ngFor="let employee of data.employeesPerDepartment | async" >{{employee.DepartmentName}}</li>
+</ul>
+<div id="piechart" style="width: 900px; height: 500px;"></div>
