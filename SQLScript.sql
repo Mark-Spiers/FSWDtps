@@ -16,9 +16,6 @@ Create table Employee (
   Salary decimal(11,2) unsigned
 );
 
--- Create Log in --
-Create User dev@localhost identified with mysql_native_password by 'dev-Pwd!';
-Grant all on Company.* to dev@localhost; 
 
 -- ALTER TABLE CONSTRAINTS FOR EMPLOYEE --
 ALTER TABLE Employee ADD CONSTRAINT Employee_NIN_chk 
