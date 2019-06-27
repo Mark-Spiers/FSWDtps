@@ -9,6 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   employees = this.http.get<Employee[]>('/api/employees')
+  employeesPerDepartment = this.http.get<Employee[]>('/api/employeesperdepartment')
 
   public addEmployee(newEmployee: Employee): void {
     this.employees = this.http.post<Employee[]>('/api/addemployee', newEmployee);
