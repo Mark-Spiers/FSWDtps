@@ -2,12 +2,11 @@ import { Directive } from '@angular/core';
 import { Validator, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 
 @Directive({
-  selector: '[companyName]',
+  selector: '[companyAddress]',
   providers: [{provide: NG_VALIDATORS,
-              useClass: NameDirective, multi: true }]
+    useClass: AddressDirective, multi: true }]
 })
-
-export class NameDirective implements Validator {
+export class AddressDirective {
 
   constructor() { }
 
@@ -15,7 +14,7 @@ export class NameDirective implements Validator {
     if (control.value == null){
       return null;
     }
-      return control.value.length <= 50 ? null : { nametoolong: true};
+      return control.value.length <= 100 ? null : { addresstoolong: true};
   }
 
 }

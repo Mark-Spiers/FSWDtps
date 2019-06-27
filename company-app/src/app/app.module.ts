@@ -10,13 +10,15 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NameDirective } from './name.directive';
+import { AddressDirective } from './address.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewEmployeeComponent,
     AddEmployeeComponent,
-    NameDirective
+    NameDirective,
+    AddressDirective
   ],
   imports: [
     BrowserModule,
