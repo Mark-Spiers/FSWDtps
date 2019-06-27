@@ -1,7 +1,7 @@
 <form (ngSubmit)="addEmployee(addForm)" #addForm="ngForm">
 <fieldset>
     <legend>Add employee</legend>
-    <div><input [(ngModel)]="newEmployee.EmployeeName" name ="EmployeeName" placeholder="Employee Name" required ></div>
+    <div><input [(ngModel)]="newEmployee.EmployeeName" name ="EmployeeName" placeholder="Employee Name" value="" required companyName></div>
     <div><input [(ngModel)]="newEmployee.Address" name ="Address" placeholder="Address" required ></div>
     <div><input [(ngModel)]="newEmployee.NIN" name ="NIN" placeholder="National Insurance No." required 
         pattern="[a-zA-Z]{2}[0-9]{6}[abcdfmpABCDFMP]" ></div>
@@ -14,6 +14,7 @@
 </fieldset>
 </form>
 <div *ngIf="addForm.hasError('required', 'EmployeeName')">Employee name is required</div>
+<div *ngIf="addForm.hasError('nametoolong', 'EmployeeName')">Employee name is too long</div>
 <div *ngIf="addForm.hasError('required', 'Address')">Address is required</div>
 <div *ngIf="addForm.hasError('required', 'NIN')">National Insurance No is required</div>
 <div *ngIf="addForm.hasError('pattern', 'NIN')">National Insurance No *</div>

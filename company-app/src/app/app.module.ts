@@ -9,12 +9,14 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NameDirective } from './name.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewEmployeeComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    NameDirective
   ],
   imports: [
     BrowserModule,
