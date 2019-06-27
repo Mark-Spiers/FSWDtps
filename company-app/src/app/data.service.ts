@@ -8,10 +8,9 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
   constructor(private http: HttpClient) { }
 
-  //employees = this.http.get<Employee[]>('/api/cities')
-  employees = []
+  employees = this.http.get<Employee[]>('/api/cities')
 
   public addEmployee(newEmployee: Employee): void {
-    //this.employees = this.http.post<Employee[]>('/api/addemployee', newEmployee);
+    this.employees = this.http.post<Employee[]>('/api/addemployee', newEmployee);
   }
 }
