@@ -14,7 +14,7 @@ db.connect(function(err) {
 
 exports.getEmployees = function(callback) {
     db.query(
-        "SELECT * FROM Employee;",
+        "SELECT * FROM getEmployees;",
         function(err, rows) {
             if (err) throw err;
             callback(rows);
