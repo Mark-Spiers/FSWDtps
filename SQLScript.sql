@@ -16,9 +16,11 @@ Create table Employee (
   Salary decimal(11,2) unsigned
 );
 
+-- Create Log in --
+Create User dev@localhost identified with mysql_native_password by 'dev-Pwd!';
+Grant all on Company.* to dev@localhost; 
+
 -- ALTER TABLE CONSTRAINTS FOR EMPLOYEE --
--- ALTER TABLE Employee ADD CONSTRAINT Employee_Salary_chk 
--- CHECK (Salary >= 16000);
 ALTER TABLE Employee ADD CONSTRAINT Employee_NIN_chk 
 CHECK (REGEXP_LIKE(NIN,'[a-z&&[^dfiquvo]]{2}[0-9]{6}[abcdfmp]'));
 ALTER TABLE Employee ADD CONSTRAINT Employee_IBAN_chk 
@@ -41,3 +43,13 @@ Values ('Ethan Weatherup', '8 Benefits Street, Larne', 'PC506080C',
 insert into Employee(EmployeeName, Address, NIN, IBAN, BIC, Salary) 
 Values ('Ben Andrew', '12 England Street, Cookstown', 'PC806030C', 
 'GB18ULST89757649912359', 'LTESGB0X', 80000.0);
+
+-- User Story 2 --
+create view getEmployeesPerDepartment as
+  SELECT EmployeeName, DepartmentName
+  FROM Employee, Department, Employee_Department
+  Where Employee.EmployeeID = Employee_Department.EmployeeID
+  AND Department.DepartmentID = Employee_Department.DepartmentID
+  ORDER BY DepartmentName;
+  
+  
