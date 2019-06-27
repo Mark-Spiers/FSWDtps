@@ -24,6 +24,7 @@ export class AddEmployeeComponent implements OnInit {
     if(addForm.valid){
       var employeeToAdd = this.newEmployee;
       this.newEmployee = new Employee();
+      this.newEmployee.Salary = Number(this.newEmployee.Salary);
       this.data.addEmployee(employeeToAdd);
     } else {
       console.error("Add employee form is invalid");
