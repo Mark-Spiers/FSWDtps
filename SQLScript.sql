@@ -41,12 +41,13 @@ insert into Employee(EmployeeName, Address, NIN, IBAN, BIC, Salary)
 Values ('Ben Andrew', '12 England Street, Cookstown', 'PC806030C', 
 'GB18ULST89757649912359', 'LTESGB0X', 80000.0);
 
--- User Story 2 --
+-- User Story 2 View --
+/**
 create view getEmployeesPerDepartment as
   SELECT EmployeeName, DepartmentName
   FROM Employee, Department, Employee_Department
   Where Employee.EmployeeID = Employee_Department.EmployeeID
   AND Department.DepartmentID = Employee_Department.DepartmentID
   ORDER BY DepartmentName;
-  
+  **/
   
