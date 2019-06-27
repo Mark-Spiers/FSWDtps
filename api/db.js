@@ -14,7 +14,7 @@ db.connect(function(err) {
 
 exports.getEmployees = function(callback) {
     db.query(
-        "SELECT * FROM getEmployees;",
+        "SELECT * FROM Employee;",
         function(err, rows) {
             if (err) throw err;
             callback(rows);
@@ -33,6 +33,7 @@ exports.getEmployeesPerDepartment = function(callback) {
 }
 
 exports.addEmployee = function(data, readyFn){
+    console.log(data);
     db.query('INSERT INTO Employee SET ?', data,
                 function(error, results, fields) {
                     if (error) throw error;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'company-add-employee',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor() { }
+  public newEmployee: Employee;
+  data: DataService;
+
+  constructor(dataService : DataService) {
+    this.data = dataService;
+  }
 
   ngOnInit() {
+    this.newEmployee = new Employee();
+  }
+
+  addEmployee(addForm) : void{
+    if(addForm.valid){
+      var employeeToAdd = this.newEmployee;
+      this.newEmployee = new Employee();
+      this.data.addEmployee(employeeToAdd);
+    } else {
+      console.error("Add employee form is invalid");
+    }
   }
 
 }

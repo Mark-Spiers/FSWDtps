@@ -8,11 +8,11 @@
         <th>Salary</th>
     </tr>
     <tr *ngFor="let employee of data.employees | async">
-        <td>{{employee.name}}</td>
-        <td>{{employee.address}}</td>
-        <td>{{employee.nin}}</td>
-        <td>{{employee.iban}}</td>
-        <td>{{employee.bic}}</td>
-        <td>{{employee.salary}}</td>
+        <td>{{employee.EmployeeID}}</td>
+        <td>{{employee.Address}}</td>
+        <td>{{employee.NIN}}</td>
+        <td>{{employee.IBAN}}</td>
+        <td>{{employee.BIC}}</td>
+        <td>{{employee.Salary}}</td>
     </tr>
 </table>
