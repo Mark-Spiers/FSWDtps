@@ -17,10 +17,10 @@ Create table Employee (
 );
 
 -- ALTER TABLE CONSTRAINTS FOR EMPLOYEE --
-ALTER TABLE Employee ADD CONSTRAINT Employee_Salary_chk 
-CHECK (Salary >= 16000);
+-- ALTER TABLE Employee ADD CONSTRAINT Employee_Salary_chk 
+-- CHECK (Salary >= 16000);
 ALTER TABLE Employee ADD CONSTRAINT Employee_NIN_chk 
-CHECK (REGEXP_LIKE(NIN,'[a-z&&[^dfiquv]]{2}[0-9]{6}[abcdfmp]'));
+CHECK (REGEXP_LIKE(NIN,'[a-z&&[^dfiquvo]]{2}[0-9]{6}[abcdfmp]'));
 ALTER TABLE Employee ADD CONSTRAINT Employee_IBAN_chk 
 CHECK (REGEXP_LIKE(IBAN,'[a-z]{2}+[0-9]{2}+[a-z]{4}+[0-9]{14}+'));
 ALTER TABLE Employee ADD CONSTRAINT Employee_BIC_chk 
