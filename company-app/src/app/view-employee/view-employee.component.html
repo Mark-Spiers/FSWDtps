@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>NIN</th>
+        <th>IBAN</th>
+        <th>BIC</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+        <td>{{employee.name}}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.nin}}</td>
+        <td>{{employee.iban}}</td>
+        <td>{{employee.bic}}</td>
+        <td>{{employee.salary}}</td>
+    </tr>
+</table>
