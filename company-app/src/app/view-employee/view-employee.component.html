@@ -7,7 +7,7 @@
         <th>BIC</th>
         <th>Salary</th>
     </tr>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of data.employees | async">
         <td>{{employee.name}}</td>
         <td>{{employee.address}}</td>
         <td>{{employee.nin}}</td>

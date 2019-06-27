@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'company-view-employee',
@@ -7,8 +8,11 @@ import { Employee } from '../employee';
   styleUrls: ['./view-employee.component.css']
 })
 export class ViewEmployeeComponent implements OnInit {
+  data: DataService
 
-  constructor() { }
+  constructor(dataService : DataService) {
+    this.data = dataService;
+  }
 
   ngOnInit() {
   }
