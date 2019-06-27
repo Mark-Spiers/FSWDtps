@@ -51,3 +51,8 @@ create view getEmployeesPerDepartment as
   ORDER BY DepartmentName;
   **/
   
+  create view getEmployees as 
+  Select EmployeeID as 'id', EmployeeName as 'name', Address as 'address', 
+  NIN as 'nin', IBAN as 'iban', BIC as 'bic', Salary as 'salary'
+  FROM Employee;
+  
