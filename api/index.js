@@ -8,6 +8,7 @@ var path = require('path');
 app.use(express.json());
 
 employees = [];
+employee_department = [];
 
 function updateEmployees(employeesReadyFn) {
     db.getEmployees(function(rows) {
@@ -15,6 +16,14 @@ function updateEmployees(employeesReadyFn) {
         employeesReadyFn();
     })
 }
+
+function updateEmployeesDepartment(employeesReadyFn) {
+    db.getEmployeesPerDepartment(function(rows) {
+        employee_department = rows;
+        employeesReadyFn();
+    })
+}
+
 
 app.get('/employees', function(req, res) {
     updateEmployees(function() {
@@ -29,6 +38,13 @@ app.post('/addemployee', function(req, res) {
             console.log('/add employees successful', 200);
             res.send(employees);
         });
+    });
+});
+
+app.get('/employeesperdepartment', function(req, res) {
+    updateEmployeesDepartment(function() {
+        res.status(200).send(employee_department);
+        console.log('/employeesperdepartment successful', 200)
     });
 });
 
