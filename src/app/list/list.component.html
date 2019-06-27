@@ -1,0 +1,7 @@
+<div class="list">
+  <h2>Cities</h2>
+  <input [(ngModel)]="filterText" placeholder="Filter" />
+  <ul>
+    <div *ngFor="let city of data.cities| async | nameFilter:filterText" (click)="onSelect(city)">{{city.name | uppercase}}</div>
+  </ul>
+</div>
