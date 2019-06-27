@@ -14,14 +14,19 @@
 </fieldset>
 </form>
 <div *ngIf="addForm.hasError('required', 'EmployeeName')">Employee name is required</div>
-<div *ngIf="addForm.hasError('nametoolong', 'EmployeeName')">Employee name is too long</div>
-<div *ngIf="addForm.hasError('required', 'Address')">Address is required</div>
-<div *ngIf="addForm.hasError('addresstoolong', 'Address')">Address is too long</div>
-<div *ngIf="addForm.hasError('required', 'NIN')">National Insurance No is required</div>
-<div *ngIf="addForm.hasError('pattern', 'NIN')">National Insurance No *</div>
-<div *ngIf="addForm.hasError('required', 'IBAN')">IBAN is required</div>
-<div *ngIf="addForm.hasError('pattern', 'IBAN')">IBAN is *</div>
-<div *ngIf="addForm.hasError('required', 'BIC')">BIC is required</div>
-<div *ngIf="addForm.hasError('pattern', 'BIC')">BIC is *</div>
-<div *ngIf="addForm.hasError('required', 'Salary')">Salary is required</div>
-<div *ngIf="addForm.hasError('pattern', 'Salary')">Salary not valid amount</div>
+<div *ngIf="addForm.hasError('nametoolong', 'EmployeeName')">Employee name is too long. It can be up to 50 characters.</div>
+<div *ngIf="addForm.hasError('required', 'Address')">Address is required.</div>
+<div *ngIf="addForm.hasError('addresstoolong', 'Address')">Address is too long. It must be less than 100 characters.</div>
+<div *ngIf="addForm.hasError('required', 'NIN')">National Insurance No is required.</div>
+<div *ngIf="addForm.hasError('pattern', 'NIN')">National Insurance No is the wrong format. It should be 2 letters, 6 numbers and 1 letter.</div>
+<div *ngIf="addForm.hasError('required', 'IBAN')">IBAN is required.</div>
+<div *ngIf="addForm.hasError('pattern', 'IBAN')">IBAN is the wrong format. It should be 2 letters, 2 numbers
+    4 letters and 14 numbers.
+</div>
+<div *ngIf="addForm.hasError('required', 'BIC')">BIC is required.</div>
+<div *ngIf="addForm.hasError('pattern', 'BIC')">BIC is the wrong format. It should be 6 letters, 1 number then
+    either a number or letter.><div>
+<div *ngIf="addForm.hasError('required', 'Salary')">Salary is required.</div>
+<div *ngIf="addForm.hasError('pattern', 'Salary')">Salary is not a valid amount. It must be positive and less
+    than 10 figures.
+</div>

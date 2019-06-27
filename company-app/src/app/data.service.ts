@@ -13,5 +13,6 @@ export class DataService {
 
   public addEmployee(newEmployee: Employee): void {
     this.employees = this.http.post<Employee[]>('/api/addemployee', newEmployee);
+    this.employees.subscribe(result => {console.log(result.length)})
   }
 }
