@@ -12,11 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NameDirective } from './name.directive';
 import { AddressDirective } from './address.directive';
 import { PiechartComponent } from './piechart/piechart.component';
-<<<<<<< HEAD
 import { NinuniqueDirective } from './ninunique.directive';
-=======
 import { EmployeeDepartmentComponent } from './employee-department/employee-department.component';
->>>>>>> bbece36f56cc472ff713665e38a06a7fbbbe1c01
+import { DepartmentNavbarComponent } from './department-navbar/department-navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +24,9 @@ import { EmployeeDepartmentComponent } from './employee-department/employee-depa
     NameDirective,
     AddressDirective,
     PiechartComponent,
-<<<<<<< HEAD
-    NinuniqueDirective
-=======
-    EmployeeDepartmentComponent
->>>>>>> bbece36f56cc472ff713665e38a06a7fbbbe1c01
+    NinuniqueDirective,
+    EmployeeDepartmentComponent,
+    DepartmentNavbarComponent
   ],
   imports: [
     BrowserModule,

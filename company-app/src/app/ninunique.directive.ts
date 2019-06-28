@@ -31,7 +31,7 @@ export class NinuniqueDirective implements Validator {
       }
     })
     console.log("NIN unique")
-    return { ninunique: true}
+    return { ninUnique: true }
   }
 
 }
